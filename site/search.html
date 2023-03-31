@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Поиск</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="index.html">Главная</a></li>
+				<li><a href="profile.html">Профиль</a></li>
+				<li><a href="search.html">Поиск</a></li>
+				<li><a href="feedback.html">Обратная связь</a></li>
+                <li><a href="my_children.html">Мои дети</a></li>
+				<li><a href="login.html">Вход</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<h1>Поиск лагеря</h1>
+		<form>
+			<label for="location">Местоположение:</label>
+			<input type="text" id="location" name="location"><br>
+
+			<label for="age">Возраст:</label>
+			<input type="number" id="age" name="age" min="6" max="17"><br>
+
+			<label for="duration">Продолжительность:</label>
+			<select id="duration" name="duration">
+				<option value="1">1 неделя</option>
+				<option value="2">2 недели</option>
+				<option value="3">3 недели</option>
+				<option value="4">4 недели</option>
+			</select><br>
+			<label for="filter_one">Профиль лагеря:</label> 
+				<select id="filter_one">
+					  <option value="Технический">Технический</option>
+					  <option value="Спортивный">Спортивный</option>
+					  <option value="Творческий">Творческий</option>
+					  <option value="Палаточный">Палаточный</option>
+					  <option value="Экскурсионный">Экскурсионный</option>
+					  <option value="Оздоровительный">Оздоровительный</option>
+					  <option value="Языковой">Языковой</option>
+				  </select>
+			<label for="filter_two">Сезон:</label>
+				<select id="filter_one">
+					<option value="Осень">Осень</option>
+					<option value="Зима">Зима</option>
+					<option value="Весна">Весна</option>
+					<option value="Лето">Лето</option>
+			</select>
+
+			<a href="spisok.html">Найти</a>
+		</form>
+	</main>
+
+	<footer>
+		<p>&copy; 2023, Все права защищены.</p>
+	</footer>
+</body>
+</html>

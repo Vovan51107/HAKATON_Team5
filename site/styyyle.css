@@ -1,0 +1,127 @@
+/* Общие стили */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Monospace;
+  font-size: 16px;
+}
+
+header {
+  background-color: #fff;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #777;
+}
+
+header .header-content {
+  display: flex;
+  align-items: center;
+}
+
+header h1 {
+  margin-right: auto;
+}
+
+header button {
+  background-color: #1abc9c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+header button:hover {
+  background-color: #16a085;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/* Стили для блока с информацией о родителе */
+
+.parent-info {
+  width: 40%;
+  background-color: #fff;
+  padding: 40px;
+  box-shadow: 0 1px 3px rgba(10, 0, 0, 0.2);
+}
+
+/* Стили для блока с информацией о детях */
+
+.children-info {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.children {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, max-content(200px, 1fr));
+  grid-gap: 20px;
+}
+
+.child-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 10px 0 40px rgba(0, 0, 0, 0.1);
+  padding: 100px;
+  text-align: center;
+}
+
+.child-card img {
+  border-radius: 50%;
+  height: 300px;
+  width: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.child-card h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 10px;
+}
+
+footer {
+    background-color: #4C061D;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+  }
+
