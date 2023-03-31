@@ -1,0 +1,109 @@
+#:kivy 2.0.0
+
+
+<LoginScreen>:
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'bg_login.png'
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: 1, 1
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+
+        GridLayout:
+            cols: 1
+            size_hint: 1, 0.33
+            Label:
+                text_size: (self.size[0] * 0.9, self.size[1])
+                text: 'Войти как...'
+                font_size: 120
+                halign: 'left'
+            Label:
+            Label:
+
+        GridLayout:
+            cols: 1
+            size_hint_y: 0.33
+            padding: 10, 10
+            Button:
+                text: 'Ребёнок'
+                font_size: 80
+                background_color: (0, 1, 0, 1)  # зеленый цвет фона кнопки
+                on_release:
+                    app.auth_type = 'child'
+                    root.manager.current = 'auth'
+            Label:
+            Button:
+                text: 'Вожатый'
+                size_hint_x: 0.8
+                font_size: 80
+                background_color: (1, 0, 0, 1)  # красный цвет фона кнопки
+                on_release:
+                    app.auth_type = 'leader'
+                    app.redirect('auth')
+
+        Label:
+            size_hint_y: 0.33
+
+
+<AuthorScreen>:
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'bg_auth.png'
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: 1, 1
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        Label:   
+        GridLayout:
+            cols: 1
+            padding: 10, 10
+            Label:
+                text: 'Вход в систему'
+                font_size: 120
+            TextInput:
+                text: 'Логин'
+                font_size: 80
+            GridLayout:
+                rows: 1
+                background_color: (1, 1, 1, 1)  # белый цвет фона
+                TextInput:
+                    id: inp_password
+                    text: 'Пароль'
+                    password: True
+                    font_size: 80
+                Button:
+                    size_hint: 0.3, 0.3
+                    text: "EYE"
+                    on_release:
+                        inp_password.password = not inp_password.password
+                    on_press:
+                        inp_password.password = not inp_password.password
+            Button:
+                text: "Продолжить"
+                on_release:
+                    app.redirect('login')
+                    app.attention.open()
+        Label:
+
+<Attention>:
+    title: 'Оооой!'
+    GridLayout:
+        cols: 1
+        Label:
+            text: 'Приложение находится\n в разработке'
+            font_size: 80
+        Button:
+            text: 'ОК'
+            size: self.size
+            sixe_hint: None, None
+            height: 50
+            font_size: 100
+            on_release:
+                app.attention.dismiss()
